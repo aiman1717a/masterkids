@@ -1,0 +1,124 @@
+/**  
+    Table of Content
+    1.Display
+    2.Showcase
+    3.Store 
+*/
+
+$colors: (
+    light-text: #ffffff,
+    dark-text: #878787,
+    circle: #DB243A,
+    // light-red: #cc5e5e,
+    // light-red2: #ffbdbd,
+    // normal-red:rgb(255, 93, 93),
+    // dark-red: rgb(238, 53, 53),
+    // white: #ffffff,
+    // purple: #E9E9EB,
+    // grey: #a1a1a1,
+    // light-grey: #DFDFDF,
+    // black: #000000,
+    // light-blue: #e8f4f8,
+    // bg: #fcfcfc
+);
+$animation: (
+    card: .2s,
+    card-hover: 4s
+);
+
+
+
+@function getColor($color-name){
+    @return map-get($colors, $color-name);
+}
+
+body {
+    background-color: getColor(bg);
+    margin: 0;
+    .main-content{
+
+        // Display
+        .section-display{
+            .banner{
+                background-image: url('../images/banner.png');
+
+                width: 100%;
+                min-height: 700px;
+                margin: 0;
+
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: none;
+            }
+        }
+
+        // Showcase
+        .section-showcase{
+            text-align: center;
+            .product-row{
+                .item{
+                    margin-top: 5px !important;
+                    margin-bottom: 5px !important;
+                }
+            }
+        }
+
+        // Store
+        .section-store{
+            text-align: center;
+            .store-area{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                .left{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    .circle{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        text-align: center;
+                        color: getColor(light-text);
+                        background-color: getColor(circle);
+                        min-height: 50px;
+                        min-width: 50px;
+                        border-radius: 50%;
+                    }
+                }
+                .store-address{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    min-height: 150px;
+                
+                    .store-name, .store-location-1, .store-location-2{
+                        height: 50px;
+                        color: getColor(dark-text);
+                        white-space: nowrap;
+                        padding: 0px 20px 0px 20px;
+                        display: flex;
+                        align-items: center;
+                        &:hover{
+                            animation: all 2s;
+                            opacity: 0.5;
+                        }
+                    }
+                    .store-name{
+                        font-weight: 200;
+                    }
+                    .store-location-1{
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+       
+    }
+    
+}

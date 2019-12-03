@@ -1,0 +1,96 @@
+/**  
+    Table of Content
+    1.Display
+    2.Showcase
+    3.Store 
+*/
+
+body {
+  margin: 0;
+}
+
+body .main-content .section-display .banner {
+  background-image: url(/images/banner.png?1ce9b8f043098cd91ea7c111155b2745);
+  width: 100%;
+  min-height: 700px;
+  margin: 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+}
+
+body .main-content .section-showcase {
+  text-align: center;
+}
+
+body .main-content .section-showcase .product-row .item {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+body .main-content .section-store {
+  text-align: center;
+}
+
+body .main-content .section-store .store-area {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+body .main-content .section-store .store-area .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+body .main-content .section-store .store-area .left .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background-color: #DB243A;
+  min-height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+}
+
+body .main-content .section-store .store-area .store-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 150px;
+}
+
+body .main-content .section-store .store-area .store-address .store-name,
+body .main-content .section-store .store-area .store-address .store-location-1,
+body .main-content .section-store .store-area .store-address .store-location-2 {
+  height: 50px;
+  color: #878787;
+  white-space: nowrap;
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  align-items: center;
+}
+
+body .main-content .section-store .store-area .store-address .store-name:hover,
+body .main-content .section-store .store-area .store-address .store-location-1:hover,
+body .main-content .section-store .store-area .store-address .store-location-2:hover {
+  -webkit-animation: all 2s;
+          animation: all 2s;
+  opacity: 0.5;
+}
+
+body .main-content .section-store .store-area .store-address .store-name {
+  font-weight: 200;
+}
+
+body .main-content .section-store .store-area .store-address .store-location-1 {
+  font-style: italic;
+}
+

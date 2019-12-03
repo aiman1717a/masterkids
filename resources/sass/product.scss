@@ -1,0 +1,123 @@
+$colors: (
+    nav-bg: #DB243A,
+    nav-bg-hover: #c91c31,
+    text: #ffffff,
+
+    light-red: #cc5e5e,
+    light-red2: #ffbdbd,
+    normal-red:rgb(255, 93, 93),
+    dark-red: rgb(238, 53, 53),
+    white: #ffffff,
+    purple: #E9E9EB,
+    grey: #a1a1a1,
+    light-grey: #DFDFDF,
+
+    bg-2:#ffffff
+);
+@function getColor($color-name){
+    @return map-get($colors, $color-name);
+}
+@function getAnimationSpeed($animation-name){
+    @return map-get($animation, $animation-name);
+}
+
+//Product Page
+.listings{
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .right-side{
+        padding: 10px;
+        .searchbar, .grid-outer{
+            background-color: getColor(bg-2);
+            box-shadow: 0px 0px 50px 2px getColor(light-grey);  
+        }
+        .searchbar{
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .grid-outer{
+            
+            // border-style: solid;
+            // border-width: 1px;
+            // border-color: getColor(light-grey);
+
+            .grid-inner{
+               padding: 10px;
+
+                .toolbar{
+                    margin: 10px;
+                    padding: 5px;
+                        // .left{
+                         
+                        // }
+                       
+                        .right{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            .my-dropdown{
+                                margin:10px;
+                            }
+                        }
+
+                }
+                .content-grid{
+                    margin: 10px;
+                    padding: 5px;
+                }
+            }
+           
+        }
+    }
+    .left-side{  
+        padding: 10px;
+
+        .filter{
+            background-color: getColor(bg-2);
+            box-shadow: 0px 0px 50px 2px getColor(light-grey);
+            z-index: 1;
+            padding: 15px;
+           
+            &-title, h5{
+                padding: 16px 16px 8px 16px;
+                // background-color: getColor(light-blue);
+                margin: 0;
+                // white-space: nowrap;
+            }
+            &-list{
+                // background-color: rgb(245, 251, 252);
+                list-style: none;
+                padding: 0 0 10px 20px;
+                margin-bottom: 5px;
+                // font-size: 14px;
+                li{
+                    .custom-checkbox{
+                        border: 0px;
+                    }
+                    input{
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .something{
+                padding: 5px 0 10px 20px !important;
+            }
+        }
+        // .filter{
+        //     // border: 2px outset getColor(light-blue);
+        //     // background-color: getColor(light-blue);
+        //     // padding: 1rem;
+        //     // &-title{
+        //     //     font-size: 1rem;
+        //     //     // white-space: nowrap;
+        //     // }
+        // }
+
+        // @media screen and (max-width: map-get($grid-breakpoints, md)) {
+        //     margin-bottom: 10px;
+        // }
+    }
+}

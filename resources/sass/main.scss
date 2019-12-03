@@ -1,0 +1,442 @@
+// Variable Overides
+@import "./resources/sass/imports/_variables";
+
+// Bootstrap Imports
+@import "./node_modules/bootstrap/scss/functions";
+@import "./node_modules/bootstrap/scss/mixins";
+@import "./node_modules/bootstrap/scss/variables";
+
+@import "./node_modules/bootstrap/scss/root";
+@import "./node_modules/bootstrap/scss/reboot";
+@import "./node_modules/bootstrap/scss/type";
+@import "./node_modules/bootstrap/scss/images";
+@import "./node_modules/bootstrap/scss/code";
+@import "./node_modules/bootstrap/scss/grid";
+@import "./node_modules/bootstrap/scss/tables";
+@import "./node_modules/bootstrap/scss/forms";
+@import "./node_modules/bootstrap/scss/buttons";
+@import "./node_modules/bootstrap/scss/transitions";
+@import "./node_modules/bootstrap/scss/dropdown";
+@import "./node_modules/bootstrap/scss/button-group";
+@import "./node_modules/bootstrap/scss/input-group";
+@import "./node_modules/bootstrap/scss/custom-forms";
+@import "./node_modules/bootstrap/scss/nav";
+@import "./node_modules/bootstrap/scss/navbar";
+@import "./node_modules/bootstrap/scss/card";
+@import "./node_modules/bootstrap/scss/breadcrumb";
+@import "./node_modules/bootstrap/scss/pagination";
+@import "./node_modules/bootstrap/scss/badge";
+@import "./node_modules/bootstrap/scss/jumbotron";
+@import "./node_modules/bootstrap/scss/alert";
+@import "./node_modules/bootstrap/scss/progress";
+@import "./node_modules/bootstrap/scss/media";
+@import "./node_modules/bootstrap/scss/list-group";
+@import "./node_modules/bootstrap/scss/close";
+@import "./node_modules/bootstrap/scss/toasts";
+@import "./node_modules/bootstrap/scss/modal";
+@import "./node_modules/bootstrap/scss/tooltip";
+@import "./node_modules/bootstrap/scss/popover";
+@import "./node_modules/bootstrap/scss/carousel";
+@import "./node_modules/bootstrap/scss/spinners";
+@import "./node_modules/bootstrap/scss/utilities";
+@import "./node_modules/bootstrap/scss/print";
+
+// Font
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+$colors: (
+    primary: #DB243A,
+    secondary: #FF7800,
+
+    light-text: #ffffff,
+    dark-text: #878787,
+
+    nav-bg: #DB243A,
+    nav-bg-hover: #c91c31,
+  
+    card-button-text: #ffffff,
+    card-button-bg: #DB243A,
+    card-button-bg-hover: #c91c31,
+    card-name: #000000,
+    card-price: #DB243A,
+
+    card-icon-bg: #DB243A,
+    card-icon-hover: #9c1626,
+
+    border-line: #DB243A,
+
+    custom-checkbox-checked: #2196F3,
+    custom-checkbox-disabled: #878787,
+
+    dropdown-bg: #F0F0F0,
+
+    footer-bg: #14141a,
+
+    purple: #E9E9EB,
+    grey: #878787,
+    light-grey: #DFDFDF,
+    black: #000000,
+    light-blue: #e8f4f8,
+    bg: #fcfcfc,
+    bg-2: #ffffff
+);
+$animation: (
+    nav-speed: .2s,
+
+    card: .2s,
+    card-hover: 4s,
+    zoom-in: 1s,
+    zoom-out: 1s,
+    icons: .5s
+);
+
+
+@function getColor($color-name){
+    @return map-get($colors, $color-name);
+}
+@function getAnimationSpeed($animation-name){
+    @return map-get($animation, $animation-name);
+}
+
+//body
+body, html {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    font-size: calc(12px + 0.35vw);
+}
+//H1
+h1 {
+    font-size: 2.045em;
+}
+//H2
+h2 {
+    font-size: 1.777em; 
+}
+//H3
+h3 {
+    font-size: 1.605em;
+}
+//H4
+h4 {
+    font-size: 1.534em;
+}
+//H5
+h5 {
+    font-size: 1.33em;
+}
+//H6
+h6 {
+    font-size: 1.204em;
+}
+h1, h2, h3, h4, h5{
+    margin: 0;
+}
+//P
+p {
+    margin: 0;
+}
+
+//Nav Bar
+.section-nav{
+    .nav-list{
+        background-color: getColor(nav-bg);
+        padding: 0px 100px !important;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-align: center;
+        height: 100px;
+
+        .logo, .item{
+            letter-spacing: 2px;
+        }
+        .logo{
+            float: left;
+            font-size: 32.75px;
+            text-decoration: none;
+            transition: all getAnimationSpeed(nav-speed) ease-in;
+        }
+        .item{
+            float: right;
+            padding: 0px 20px;
+            margin-top: auto;
+            margin-bottom: auto;
+            transition: all getAnimationSpeed(nav-speed) ease-in;
+
+            &:hover{
+                background-color: getColor(nav-bg-hover) !important;
+            }
+        }
+        li a{
+            display:block; 
+            line-height: 100px;
+            height:100%;
+            text-align: center;
+            color: getColor(light-text) !important;
+            text-decoration: none;
+        }
+    }
+}
+
+//Product Card
+.product{
+    position: relative;
+    background: white;
+    overflow: hidden;
+    &:hover{
+        box-shadow: 0px 0px 20px 2px getColor(light-grey);
+        z-index: 1;
+        .overlay{
+            opacity: 1;
+        }
+        img{
+            transition: all getAnimationSpeed(zoom-in) ease;
+            transform: scale(1.1, 1.1);
+        }
+    }
+    &:not(:hover){
+        img{
+            transition: all getAnimationSpeed(zoom-out) ease;
+        }
+    }
+
+    &-thumbnail{
+        border: 20px solid transparent;
+        img{     
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        .overlay{
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            padding: 5px;   
+            
+            transition: opacity getAnimationSpeed(icons) ease-in;
+            opacity: 0;
+            a{
+                display: block;
+                padding: 5px;
+            }
+            .material-icons{
+                border-radius: 3px;
+                
+                color: getColor(light-text) !important;
+                background-color: getColor(card-icon-bg);
+                padding: 10px;
+                transition: all .2s;
+                font-size: calc(18px + 0.01vw);
+                &:hover{
+                    background-color: getColor(card-icon-hover);
+                    font-size: calc(18px + 0.50vw);
+                }
+            }
+        }
+    }
+    
+
+    &-content {
+        width: 100%;
+        padding: .5rem 1rem;
+        transition: all .2s ease;
+
+        a {
+            text-decoration: none !important;
+            color: #202927;
+        }
+        
+        & .product-title {
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            color: getColor(card-name);
+            // line-height: padding 1px;
+        }
+        
+        & .product-price {
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: rgba(32, 41, 28, .8);
+            text-align: center;
+            color: getColor(card-price);
+        }
+    }
+}
+
+//Title
+.title-area{
+    display:inline-block;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    .title{
+        text-align: center;
+        color: getColor(dark-text);
+        background-color: getColor(bg);
+        padding: 10px 0px;
+        font-style: normal;
+        font-weight: 300;
+    }
+    .title-border{
+        height: 10px;
+        background-color: getColor(border-line);;
+        border: getColor(border-line);
+        border-radius: 5px;
+        // margin: 0px 0px 50px 0px;
+    }
+}
+
+//Footer
+footer{
+    margin: 50px 0px 0px 0px;
+    height: 200px;
+    background-color: getColor(footer-bg);
+}
+
+.container, .row, .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    transition: all .2s;
+}
+// .filter-categories-title{
+//     padding: 10px;
+// }
+
+.dp-filter{
+    border-radius: 0px;
+    background: getColor(white);
+
+    button{
+        border-style: solid;
+        border-width: 1px;
+        border-color: getColor(light-grey);
+        width: 100%;
+        color: getColor(black);
+        border-radius: 0px;
+        background-color: getColor(white);
+        &:focus{
+            box-shadow: none;
+            color: getColor(black);
+            background-color: getColor(white);
+        }
+    }
+}
+
+
+.my-checkbox {
+    position: absolute; // take it out of document flow
+    opacity: 0; // hide it
+
+    // Box hover
+    &:hover {
+        color: #f35429;
+    }
+
+    & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        font-size: calc(12px + 0.35vw);
+    }
+
+    // Box.
+    & + label:before {
+        content: "";
+        border: 1px solid getColor(grey);
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+    }
+
+    // Box checked
+    &:checked + label:before {
+        background: getColor(custom-checkbox-checked);
+        border:none;
+    }
+
+    // Disabled state label.
+    &:disabled + label {
+        color: getColor(custom-checkbox-disabled);
+        cursor: auto;
+    }
+
+    // Disabled box.
+    &:disabled + label:before {
+        box-shadow: none;
+        background: getColor(custom-checkbox-disabled);
+    }
+
+    // Checkmark. Could be replaced with an image
+    &:checked + label:after {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 9px;
+        background: white;
+        width: 2px;
+        height: 2px;
+        box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+        4px -6px 0 white, 4px -8px 0 white;
+        transform: rotate(45deg);
+    }
+}
+.my-search-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F9F9F9;
+    margin: 10px;
+    width: 100%;
+    input, i{
+        background-color: #F9F9F9;
+        border:none;
+        padding: 20px;
+        font-size: 1em;
+    }
+    input{
+        height: 100%;
+        width: 100%;
+        outline:0;
+        // padding-left: 10px;
+        color: getColor(primary);
+        font-weight: bold;
+        letter-spacing: 2px;
+
+        :focus{
+            box-shadow: none;
+            outline: 0;
+        }
+    }
+    ::placeholder { /* Most modern browsers support this now. */
+        color:    getColor(primary)
+    }
+    .hl{
+        height: 40px;
+        border: 1px solid getColor(primary) !important;
+    }
+    i{
+        font-weight: bold;
+        font-size: 1.5em;
+        height: 100%;
+        // padding-right: 15px;
+        color: getColor(primary);
+    }
+}
+.my-dropdown{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px;
+    background-color: #F9F9F9;
+    border: 3px solid rgb(194, 194, 194) !important;
+    color: #555555;
+    font-weight: bold;
+    outline: 0;
+    cursor: pointer;
+}
