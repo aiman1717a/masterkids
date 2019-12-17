@@ -3,5 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/main.css": "/css/main.css",
     "/css/index.css": "/css/index.css",
-    "/css/product.css": "/css/product.css"
+    "/css/product.css": "/css/product.css",
+    "/js/requirejs/require.js": "/js/requirejs/require.js"
 }

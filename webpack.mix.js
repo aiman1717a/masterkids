@@ -17,3 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
 mix.sass('resources/sass/main.scss', 'public/css/main.css');
 mix.sass('resources/sass/index.scss', 'public/css/index.css');
 mix.sass('resources/sass/product.scss', 'public/css/product.css');
+
+mix.copy('./node_modules/requirejs/require.js', 'public/js/requirejs/require.js');
+mix.copy('./node_modules/axios', 'public/js/axios');

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Web\PageController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,3 +15,5 @@ use App\Http\Controllers\Web\PageController;
 |
 */
 Route::get('/', [PageController::class, 'index']);
+Route::get('/catalog', [PageController::class, 'catalog']);
+Route::get('/getproducts', [PageController::class, 'getProducts']);

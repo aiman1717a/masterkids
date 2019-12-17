@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
     <div class="main-content">
         <div class="section-display container-fluid p-0">
             <div class="row banner">
@@ -14,18 +15,16 @@
             <div class="row">
                 <div class="col">
                     <div class="title-area">
-                        <h3 class="title">Our Products</h3> 
+                        <h3 class="title">Our Products</h3>
                         <div class="title-border"></div>
                     </div>
                 </div>
             </div>
-
-            <product-component v-bind:products="products"></product-component>
-
+            <products-component></products-component>
             <div class="row contents">
                 <div class="col">
                     <div class="title-area">
-                        <h3 class="title">Our Categories</h3> 
+                        <h3 class="title">Our Categories</h3>
                         <div class="title-border"></div>
                     </div>
                 </div>
@@ -45,18 +44,16 @@
                 </div>
             </div>
         </div>
-        <div class="section-store container">
-            <div class="row">
-                <div class="col">
-                    <div class="title-area">
-                        <h3 class="title">Our Stores</h3> 
-                        <div class="title-border"></div>
-                    </div>
-                </div>
-            </div>
-            <store-component v-bind:stores="stores"></store-component>
-            {{-- <hr> --}}
-
-        </div>
+        <stores-component></stores-component>
     </div>
+@endsection
+
+@section('custom_js')
+    <script>
+        // document.getElementsByClassName("title")[0].innerHTML = "new content";
+        // for (var i = 0; i < myClasses.length; i++) {
+        //     myClasses[i].innerHTML = "new content";
+        // }
+        // console.log("ddd");
+    </script>
 @endsection
