@@ -38,23 +38,6 @@
         </div>
         <script src="{{asset('js/jquery-3.4.1.min.js')}}" type="text/javascript"></script>
         <script src="{{asset('js/jquery-ui/jquery-ui.js')}}" type="text/javascript"></script>
-        <script>
-        // $(function() {
-        //         $( "#slider-range" ).slider({
-        //         range: true,
-        //         min: 0,
-        //         max: 500,
-        //         values: [ 75, 300 ],
-        //         slide: function( event, ui ) {
-        //         $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-        //         }
-        //         });
-        //
-        //         $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-        //         " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-        //     });
-        </script>
-
         @yield('custom_js');
     </body>
 </html>

@@ -1,6 +1,9 @@
 @extends('layouts.layout')
 
 @section('custom_css')
+    <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.structure.min.css')}}">
+    <link rel="stylesheet" href="{{asset('jquery-ui/jquery-ui.theme.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/product.css')}}">
 @endsection
 
@@ -10,7 +13,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-2 left-side">
                 <div class="filter">
                     <h5>Filter</h5>
-                        <h6 class="filter-title">Browse By :</h6>
+                        <h6 class="filter-title">Browse By</h6>
                         <ul class="filter-list">
                             <li>
                                 <input type="checkbox" class="my-checkbox" id="checkboxC1"/>
@@ -61,9 +64,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row content-grid">
-                            <catalog-component></catalog-component>
-                        </div>
+
+                        <catalog-component></catalog-component>
+                        <catalog-component></catalog-component>
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

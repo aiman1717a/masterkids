@@ -1,0 +1,6 @@
+@function getColor($color-name){
+    @return map-get($colors, $color-name);
+}
+@function getAnimationSpeed($animation-name){
+    @return map-get($animation, $animation-name);
+}

@@ -1,17 +1,29 @@
 <template>
-    <div>
+    <div class="row content-grid">
         <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 product-column" v-for="product in products" v-bind:key="product.id">
             <item-component :product="product"></item-component>
+        </div>
+        <div class="col-12">
+            <paginate-component
+                :page-count="20"
+                :click-handler="clickCallback"
+                :prev-text="'Prev'"
+                :next-text="'Next'"
+                :container-class="'pagination'"
+                :page-class="'pagination-item'">
+            </paginate-component>
         </div>
     </div>
 </template>
 
 <script>
     import ItemComponent from '../components/ItemComponent.vue';
+    import PaginateComponent from 'vuejs-paginate'
 
     export default {
         components:{
-            ItemComponent
+            ItemComponent,
+            PaginateComponent
         },
 
         data() {
@@ -19,6 +31,11 @@
                 products: null
             }
         },
+        methods: {
+            clickCallback: function() {
+                console.log("working")
+                }
+            },
         mounted () {
             console.log('mounted');
             var ref = this;
@@ -59,3 +76,24 @@
         }
     }
 </script>
+
+<style lang="scss">
+
+    @import "./../../sass/imports/my_variables";
+    @import "./../../sass/imports/my_functions";
+
+    .pagination{
+        width: 100%;
+        li{
+            :hover{
+                background-color: getColor(pagination-hover);
+            }
+        }
+        li a{
+            color: black;
+            border-left: 1px solid #1ccacd;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+    }
+</style>

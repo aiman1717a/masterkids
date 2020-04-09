@@ -1,0 +1,47 @@
+$colors: (
+    primary: #DB243A,
+    secondary: #FF7800,
+
+    light-text: #ffffff,
+    dark-text: #878787,
+
+    nav-bg: #DB243A,
+    nav-bg-hover: #c91c31,
+
+    card-button-text: #ffffff,
+    card-button-bg: #DB243A,
+    card-button-bg-hover: #c91c31,
+    card-name: #000000,
+    card-price: #DB243A,
+    card-hover: #DFDFDF,
+
+    card-icon-bg: #DB243A,
+    card-icon-hover: #9c1626,
+
+    border-line: #DB243A,
+
+    custom-checkbox-checked: #2196F3,
+    custom-checkbox-disabled: #878787,
+
+    pagination-hover: #ebebeb,
+    dropdown-bg: #F0F0F0,
+
+    footer-bg: #14141a,
+
+    purple: #E9E9EB,
+    grey: #878787,
+    light-grey: #DFDFDF,
+    black: #000000,
+    light-blue: #e8f4f8,
+    bg: #fcfcfc,
+    bg-2: #ffffff
+);
+$animation: (
+    nav-speed: .2s,
+
+    card: .2s,
+    card-hover: 4s,
+    zoom-in: 1s,
+    zoom-out: 1s,
+    icons: .5s
+);
